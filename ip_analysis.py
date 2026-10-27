@@ -8,6 +8,6 @@ ips = re.findall(r"\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b", data)
 
 ip_count = Counter(ips)
 
-print("Bulunan IP adresleri:\n")
-for ip, count in ip_count.items():
-    print(f"{ip} -> {count} kez")
+print("IP addresses found:\n")
+for ip, count in ip_count.most_common():
+    print(f"{ip} -> {count} {'time' if count == 1 else 'times'}")
